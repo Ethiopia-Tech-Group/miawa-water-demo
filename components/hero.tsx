@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Noto_Sans_Ethiopic } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const notoEthiopic = Noto_Sans_Ethiopic({
   subsets: ["ethiopic"],
@@ -11,6 +12,7 @@ const notoEthiopic = Noto_Sans_Ethiopic({
 });
 
 export default function Hero() {
+  const router = useRouter()
   return (
     <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
       {/* Hero Background Image */}
@@ -134,7 +136,7 @@ export default function Hero() {
                 
                 <br />
                 <motion.span 
-                  className={`text-sky-300 inline-block ${notoEthiopic.variable}`}
+                  className={`text-sky-300 inline-block `}
                   animate={{ 
                     textShadow: [
                       "0 0 20px rgba(125, 211, 252, 0.5)",
@@ -165,6 +167,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <motion.button 
+                 onClick={() => {router.push('/contact')}}
                   className="bg-[#003367] hover:bg-blue-600 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-3xl transition-all border-2 border-white/20 relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -181,6 +184,7 @@ export default function Hero() {
 
                 {/* Secondary CTA */}
                 <motion.button 
+                onClick={() => {router.push('/about')}}
                   className="border-2 border-white/50 hover:border-white text-white px-8 py-4 rounded-full font-semibold text-lg backdrop-blur-sm hover:bg-white/10 transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
