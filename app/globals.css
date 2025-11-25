@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 /* @import 'tw-animate-css'; */
 
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -75,7 +76,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
+  --font-sans: 'Poppins', 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -122,4 +123,40 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll if any */
+}
+
+/* Hide scrollbars for all browsers */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* optional: just to be safe */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hero-title {
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+  font-stretch: condensed;
+  font-weight: 700;
 }
