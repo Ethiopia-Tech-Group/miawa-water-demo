@@ -57,20 +57,22 @@ const Benefits = () =>{
                     </div>
                   </motion.div>
                   <motion.div 
-                    className="flex-1"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={benefitsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                      <Image 
-                        src="/miawa.png" 
-                        alt="Miawa Water Benefits" 
-                        fill 
-                        className="object-cover" 
-                      />
-                    </div>
-                  </motion.div>
+  className="flex-1"
+  initial={{ opacity: 0, x: 50 }}
+  animate={benefitsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="relative w-full h-64 sm:h-72 md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+    <Image 
+      src="/miawa.png" 
+      alt="Miawa Water Benefits" 
+      fill 
+      priority
+      className="object-cover"
+    />
+  </div>
+</motion.div>
+
                 </div>
               </div>
             </section>
